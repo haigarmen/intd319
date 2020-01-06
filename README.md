@@ -1,10 +1,10 @@
+##### INTD319
 # Making Data Interactive Course
-##### An Emily Carr University of Art + Design Course
-##### by Haig Armen
+##### An Emily Carr University of Art + Design Course by Haig Armen
 
 This course offers an introduction on how to design and implement compelling interactive data visualizations. The material is designed for participants to generate meaningful experiences using open source technology to move from an idea through to a finished visualization. The course integrates the design process with highly practical implementation techniques. During this course, participants will learn proven tools, frameworks and concepts useful for creating your own custom data visualization tools rather than relying on off-the-shelf solutions.
 
-Course Learning Outcomes
+### Course Learning Outcomes
 
 In this course students will learn the following:
 
