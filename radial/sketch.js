@@ -41,4 +41,6 @@ function draw() {
     text(Math.floor(currentData), offset-20, 0);
     pop();
   }
+
+
 }

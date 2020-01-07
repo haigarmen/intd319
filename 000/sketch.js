@@ -2,7 +2,8 @@
 Course: INTD319
 Assignment: P5.js Basics
 Blog: https://courses.haigarmen.com/intd319-2020
-Description:
+Description: Basic drawing shapes and coordinates. Refer to site for reference:
+https://p5js.org/reference/
 **/
 
 function setup() {
@@ -29,6 +30,11 @@ function draw() {
 	// the second number is the Y value (distance from the top border)
  	// line() draws a line on the display
 
-	// line(0,0,99,99);
-	line(random(600),random(600),random(600),random(600));
+	line(0,0,500,500);
+	// line(random(600),random(600),random(600),random(600));
+
+    // circle
+    // ellipse
+    // rectangle
+
 }
