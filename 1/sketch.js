@@ -7,20 +7,20 @@ https://p5js.org/reference/
 **/
 
 function setup() {
-  createCanvas(600, 600);
+  createCanvas(windowWidth, windowHeight);
   // change the canvas size
   // lines in p5 that begin with two slashes are comments
 }
 
 function draw() {
-  background(255);
+    background(255);
 	// change our background color
 
 	// p5 has a number of functions to draw primitive shapes.
 	//
 	// here's point(), which draws a pixel on the display
 
-	point(50,50);
+	// point(50,50);
 	// point(51,50);
 	// point(52,50);
 	// point(53,50);
