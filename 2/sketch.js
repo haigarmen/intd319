@@ -12,10 +12,19 @@ function setup() {
     createCanvas(windowWidth, windowHeight);
     background(0); // this makes the background black
 }
+
 function draw() {
+    // change the stroke colour
+    // random() function creates a random number
+    // specifying one number specifies a maximum
+    // specifying two numbers specifies random(minium, maxium)
     stroke(random(255));
-    // start lines in the middle of the screen (width/2, height/2)
-    line(random(width), random(height), random(width), random(height));
+    // let's draw a line with a fixed starting point and a random end point.
+    line(0,0,random(300),random(300));
+    // now let's try making the lines fill the screen
+
+    // how about creating lines that start and end at random points
+    // line(random(width), random(height), random(width), random(height));
 
     // noLoop();
 }

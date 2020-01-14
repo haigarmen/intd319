@@ -1,6 +1,6 @@
 /** Name: Haig Armen
 Course: INTD319
-Assignment: Lines from Center
+Assignment: Lines from Center & Variables
 Blog: https://courses.haigarmen.com/intd319-2020
 Description:
 **/

@@ -1,39 +1,27 @@
 /** Name: Haig Armen
 Course: INTD319
-Assignment: P5.js Basics
+Assignment: Loops
 Blog: https://courses.haigarmen.com/intd319-2020
 Description:
 **/
 
-// drawing lines from the center of the canvas
-// why does the X and Y of second point need to be between 0 and width
+// now we're going to create a for loop
+// loops are useful for many reasons
+// for example. we can draw multiple things with slight variations
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
-    background(255); // this makes the background black
 }
 function draw() {
-    noStroke();
-    fill(0);
-    // vertical bars
-    rect(40,0,10, height-300);
-    rect(300,0,10, height);
-    rect(400,0,10, height-300);
-    rect(600,0,10, height);
-    rect(630,0,10, height);
-    rect(670,0,10, height);
-    rect(770,0,10, height);
-    rect(870,0,10, height);
+    background(255); // this makes the background white
+    // vertical lines created with one random line in a loop
+    for (let i = 0;  i < 20; i++)  {
+        strokeWeight(random(60));
+        randX = random(width);
+        line(randX, 0, randX, height);
+    }
 
-    // vertical bars
-    rect(0,100,width, 10);
-
-    // colour blocks
-    fill(255,0,0);
-    rect(0,0,40, 200);
-    fill(0,0,255);
-    rect(300,0,100, 100);
-    // rect(,);
-
+    // we can also choose to not loop the draw()loop
+    // noLoop();
 
 }
