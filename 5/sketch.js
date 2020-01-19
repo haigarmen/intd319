@@ -46,6 +46,7 @@ function draw() {
 
         // let's try circles instead of rectangles
         // now we need to change the size of the rectangle to reflect the city size
+        // ellipse(120*i, 300, myRow.getNum("area"), myRow.getNum("area"));
         // ellipse(120*i, 300, myRow.getNum("area")/100, myRow.getNum("area")/100);
 
         // how about a different calculation for city area

@@ -15,13 +15,14 @@ function setup() {
 function draw() {
     background(255); // this makes the background white
     // vertical lines created with one random line in a loop
-    for (let i = 0;  i < 20; i++)  {
-        strokeWeight(random(60));
+    for (let i = 0;  i < 80; i = i+1)  {
+        stroke(random(255));
+        strokeWeight(random(20));
         randX = random(width);
         line(randX, 0, randX, height);
     }
 
     // we can also choose to not loop the draw()loop
-    // noLoop();
+    noLoop();
 
 }

@@ -13,28 +13,10 @@ function setup() {
 }
 
 function draw() {
-    background(255);
+    // background(255);
 	// change our background color
 
-	// p5 has a number of functions to draw primitive shapes.
-	//
-	// here's point(), which draws a pixel on the display
-
-	// point(50,50);
-	// point(51,50);
-	// point(52,50);
-	// point(53,50);
-	// point(54,50);
-
-	// the first number is the X value (distance from the left border)
-	// the second number is the Y value (distance from the top border)
- 	// line() draws a line on the display
-
-	line(0,0,500,500);
-	// line(random(600),random(600),random(600),random(600));
-
-    // circle
-    // ellipse
-    // rectangle
+	// line(0,0,1480,900);
+	line(random(width),random(height),random(width),random(height));
 
 }

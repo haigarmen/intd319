@@ -19,21 +19,21 @@ function draw() {
     // A.
     // start lines in the middle of the screen (width/2, height/2)
     // first we'll try it without variables
-    line(width/2, height/2, random(width), random(height));
+    // line(width/2, height/2, random(width), random(height));
 
     // B.
     // if we want to remember the random numbers used to draw the line
     // we'll need to create some variables
-    // let lineX = random(width);
-    // let lineY = random(height);
-    // line(width/2, height/2, lineX, lineY);
+    let lineX = random(width);
+    let lineY = random(height);
+    line(width/2, height/2, lineX, lineY);
 
     // C.
     // now that we've saved the random numbers as variables we can recall them
     // to draw other shapes too
-    // noFill();
-    // ellipseMode(CENTER);
-    // ellipse(lineX, lineY, 10,10);
+    noFill();
+    ellipseMode(CENTER);
+    ellipse(lineX, lineY, 10,10);
 
 
 }

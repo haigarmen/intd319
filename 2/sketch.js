@@ -1,6 +1,6 @@
 /** Name: Haig Armen
 Course: INTD319
-Assignment: P5.js Basics
+Assignment: Drawing Basics and Random
 Blog: https://courses.haigarmen.com/intd319-2020
 Description:
 **/
@@ -18,9 +18,9 @@ function draw() {
     // random() function creates a random number
     // specifying one number specifies a maximum
     // specifying two numbers specifies random(minium, maxium)
-    stroke(random(255));
+    stroke(random(255),random(255), random(255));
     // let's draw a line with a fixed starting point and a random end point.
-    line(0,0,random(300),random(300));
+    line(width/2,height/2,random(width),random(height));
     // now let's try making the lines fill the screen
 
     // how about creating lines that start and end at random points
