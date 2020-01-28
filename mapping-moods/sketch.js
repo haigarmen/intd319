@@ -17,13 +17,13 @@ function preload() {
 }
 
 function setup() {
-  canvas = createCanvas(800, 600);
+  canvas = createCanvas(windowWidth, windowHeight);
 
   myMap = mappa.tileMap(options);
   myMap.overlay(canvas);
 
-  console.log(data.getRowCount());
-  console.log(data.columns);
+  // console.log(data.getRowCount());
+  // console.log(data.columns);
 }
 
 function draw() {

@@ -16,6 +16,11 @@ let spacing = 40;
 let lastX = 0;
 let lastY = 0;
 
+let temps = [];
+let tempMax = 0;
+let tempMin = 0;
+
+
 function preload() {
   //my table is comma separated value "csv"
   //and has a header specifying the columns labels
@@ -25,6 +30,18 @@ function preload() {
 function setup() {
     createCanvas(windowWidth, windowHeight);
     textSize(12);
+
+    // before we can calculate the min and max temperatures
+    // we need to make an array of all temperatures
+
+    // for (let i = 0;  i < myTable.getRowCount(); i++)  {
+    //     let myRow =myTable.getRow(i);
+    //     temps.push(myRow.getNum('temp'));
+    // }
+    // tempMax = max(temps);
+    // tempMin = min(temps);
+    // print("tempMax is: " + tempMax);
+    // print("tempMin is: " + tempMin);
 }
 
 function draw() {
@@ -41,9 +58,13 @@ function draw() {
         let date = myTable.getString(i, "date");
         // print(temp + "\n");
         // use the map function to find the right y coordinate to represent temperature
-        let y = map(temp, 1, 10, 0, height/2);
+        let y = map(temp, -7, 10, 20, height*.8);
         // wait a minute, this is showing the temperature upsidedown, highest is at the bottom
-        // let y = map(temp, 1, 10, height/2, 0);
+        // let y = map(temp, -8, 10, 20, height*.8);
+
+        // also a pain to calculate the min and max manually everytime.
+        // let's use the handy min() and max() functions to do it for us.
+        // let y = map(temp, tempMin, tempMax, 20, height*.8);
 
         // while we're at it, let's calculate the x value too
         let x = i * spacing;

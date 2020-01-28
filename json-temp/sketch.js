@@ -14,7 +14,7 @@ var temps = []; // an array of all the "high" values
 var forecastArray = [];
 function preload(){
 	//loads .json data
-		data = loadJSON('paris-weather.json');
+		data = loadJSON('http://api.openweathermap.org/data/2.5/forecast?id=6455259&APPID=6f52132005d4058a44a8ac31b1b13a3a');
 }
 
 function setup() {
