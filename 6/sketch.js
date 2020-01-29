@@ -15,7 +15,7 @@ let spacing = 40;
 //rect(20, 20, (width-40), (height-40));
 let lastX = 0;
 let lastY = 0;
-
+//
 let temps = [];
 let tempMax = 0;
 let tempMin = 0;
@@ -30,18 +30,18 @@ function preload() {
 function setup() {
     createCanvas(windowWidth, windowHeight);
     textSize(12);
-
-    // before we can calculate the min and max temperatures
+    // noLoop()
+        // before we can calculate the min and max temperatures
     // we need to make an array of all temperatures
 
-    // for (let i = 0;  i < myTable.getRowCount(); i++)  {
-    //     let myRow =myTable.getRow(i);
-    //     temps.push(myRow.getNum('temp'));
-    // }
-    // tempMax = max(temps);
-    // tempMin = min(temps);
-    // print("tempMax is: " + tempMax);
-    // print("tempMin is: " + tempMin);
+    for (let i = 0;  i < myTable.getRowCount(); i++)  {
+        let myRow =myTable.getRow(i);
+        temps.push(myRow.getNum('temp'));
+    }
+    tempMax = max(temps);
+    tempMin = min(temps);
+    print("tempMax is: " + tempMax);
+    print("tempMin is: " + tempMin);
 }
 
 function draw() {
@@ -49,7 +49,7 @@ function draw() {
     fill(200);
     stroke(155);
     // now we're going to create a for loop
-    for (let i = 0;  i < myTable.getRowCount(); i++)  {
+    for (let i = 0;  i < myTable.getRowCount(); i = i +1)  {
         // first we'll make a variable that holds the row data
         let myRow =myTable.getRow(i);
         // then we'll make a variable that holds the temperature
@@ -58,9 +58,9 @@ function draw() {
         let date = myTable.getString(i, "date");
         // print(temp + "\n");
         // use the map function to find the right y coordinate to represent temperature
-        let y = map(temp, -7, 10, 20, height*.8);
+        // let y = map(temp, -10, 10, 20, height);
         // wait a minute, this is showing the temperature upsidedown, highest is at the bottom
-        // let y = map(temp, -8, 10, 20, height*.8);
+        let y = map(temp, -8, 10, height*.8, 20);
 
         // also a pain to calculate the min and max manually everytime.
         // let's use the handy min() and max() functions to do it for us.
@@ -71,7 +71,10 @@ function draw() {
         ellipse(x, y, 5, 5);
 
         //draw a line to connect the dots
-        line(lastX, lastY, x, y);
+        // on the last loop don't draw the line
+        if (i > 0) {
+            line(lastX, lastY, x, y);
+        }
         lastX = x;
         lastY = y;
     }
