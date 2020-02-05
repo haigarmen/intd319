@@ -9,8 +9,7 @@ make a print version that can be printed on the riso printer.
 
 function setup() {
     createCanvas(windowWidth, windowHeight, SVG);
-    colorMode(HSB, 100);
-    textSize(12);
+    colorMode(HSB);
     // to create pdfs from p5 we will need to write the following lines
     pdf = createPDF();
     pdf.beginRecord();
@@ -30,18 +29,24 @@ function draw() {
     // 1.  create first loop that draws the circles horizontally
     for (let i = 0; i < colNumber; i = i + 1) {
         // 1.1 create a variable that calculates the horizontal space between circles
-        let x = i * horizontalSpace + 60;
+        let x = i * horizontalSpace+60;
         // 2. create second loop that draws the circles vertically
         for (let j = 0; j < rowNumber; j = j + 1) {
             // 2.1 create a variable that calculates the vertical space between circles
-            let y = j * verticalSpace+ 60;
+            let y = j * verticalSpace+60;
                 // 3. create third loop will draw the concentric circles
-                for (let k = 0; k < 12; k = k + 1) {
-                    noFill();
-                    circleSize = k * random(15);;
-                    strokeWeight(random(20));
-                    stroke(random(30), 70, 100);
+                for (let k = 0; k < 8; k = k + 1) {
+                     noFill();
+                    // 3.1 create a variable to establish circle size
+                    circleSize = k * random(15);
+                    // 3.2 generate a random stroke weight
+                    strokeWeight(random(16));
+                    // 3.3 generate a random color - grey
+                    // stroke(random(255));
+                    // 3.4 generate a random color - color
+                    stroke(random(360), 70, 100);
                     ellipse(x, y, circleSize, circleSize);
+                    // ellipse(x, y, circleSize, circleSize);
                 }
         }
 
