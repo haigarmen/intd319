@@ -28,14 +28,12 @@ function setup() {
 
 function draw() {
   push();
-  textSize(28);
-	fill(0, 102, 153);
-	text(textTitle, 50, 10, 350, 80);
-  pop();
-
-  push();
   myMap.onChange(drawPosition);
   pop();
+
+  textSize(28);
+  fill(255);
+  text(textTitle, 50, 10, 350, 80);
 }
 
 function drawPosition() {
