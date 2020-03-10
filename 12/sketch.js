@@ -1,3 +1,10 @@
+/** Name: Haig Armen
+Course: INTD319
+Assignment: Drawing Scatterplot
+Blog: https://courses.haigarmen.com/intd319-2020
+Description:
+**/
+
 let data;
 
 // preload table data
