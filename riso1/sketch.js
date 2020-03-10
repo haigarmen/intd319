@@ -16,7 +16,7 @@ function setup() {
   background(255);
   clearRiso();
 
-  black.fill(255);
+  black.fill(150);
   black.ellipse(200, height / 2, 300, 300);
 
   yellow.fill(255);

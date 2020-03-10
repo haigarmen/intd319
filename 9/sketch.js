@@ -26,8 +26,8 @@ function setup(){
    myMap.onChange(drawMeteorites);
 
    // Add a color to our ellipse
-   fill(70, 203,31);
-   stroke(100);
+   fill(205, 203,31);
+   noStroke();
 }
 
 // p5.js draw

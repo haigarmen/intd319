@@ -14,6 +14,8 @@ let canvas;
 const mappa = new Mappa('Leaflet');
 // Lets put all our map options in a single object
 const options = {
+  // lat: 49,
+  // lng: 240,
   lat: 0,
   lng: 0,
   zoom: 4,
@@ -22,7 +24,7 @@ const options = {
 
 function setup(){
   // Create a canvas 640x640
-  canvas = createCanvas(640,640);
+  canvas = createCanvas(windowWidth,windowHeight);
   // Add a grey background
   // background(100);
   // Create a tile map with lat 0, lng 0, zoom 4
@@ -31,9 +33,16 @@ function setup(){
   myMap = mappa.tileMap(options);
   // Overlay the canvas over the tile map
   myMap.overlay(canvas);
+
+  // Only redraw the point when the map changes and not every frame.
+  myMap.onChange(drawPoint);
 }
 
 function draw(){
+
+}
+
+function drawPoint() {
     // Clear the previous canvas on every frame
     clear();
     // Every Frame, get the canvas position
