@@ -1,3 +1,10 @@
+/** Name: Haig Armen
+Course: INTD319
+Assignment: Basic Interactivity
+Blog: https://courses.haigarmen.com/intd319-2020
+Description:
+**/
+
 function setup() {
     canvas = createCanvas(windowWidth, windowHeight);
     strokeWeight(8);
