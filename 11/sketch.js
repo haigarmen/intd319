@@ -27,10 +27,15 @@ function draw() {
 
 
     // simple buttons
-    drawButton("hello",10,10);
+    drawButton("hello",100,10);
     drawButton("goodbye",200,10);
     drawButton("maoz",300,10);
     drawButton("karsen",400,10);
+
+    for(let i = 0; i < 9; i++) {
+        drawButton("hello",100*i,200);
+    }
+
     noStroke();
     // fill(255,0,0);
     // if (mouseX < width/2 && mouseY < height/2) {

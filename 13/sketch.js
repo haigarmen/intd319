@@ -8,6 +8,7 @@ Description:
 let data;
 let lastX = 0;
 let lastY = 0;
+
 // preload table data
 function preload() {
     data = loadTable(
@@ -31,6 +32,7 @@ function colValsMinMax(tab, colName) {
 }
 
 function setup() {
+    colorMode(HSB, 100);
     canvas = createCanvas(windowWidth, windowHeight);
 
     // how many rows?
@@ -38,13 +40,13 @@ function setup() {
     // what are the columns?
     console.log(data.columns);
 
-    background(50);
+    background(0);
     stroke(255);
+}
 
+function draw() {
     // fetch values and min/max for yesterday
     let today = colValsMinMax(data, "3/16/20");
-    console.log(today.min);
-    console.log(today.max);
 
     // Pseudo code first
     // find the data for Canada by:
@@ -52,25 +54,33 @@ function setup() {
     // save that into a data object called "canada"
     // put number of confirmed into an object called confirmed.push(myRow.getNum(j));
     // loop through table columns
-    stroke(255, 128, 128);
 
     for (var i = 0; i < data.getRowCount(); i++) {
         let myRow = data.getRow(i);
+        let newHue = map(i,0,data.getRowCount(),100,0)
+
         // x position is date; y position is number confirmed
         for (var j = 3; j < data.getColumnCount(); j++) {
             let confirmed = myRow.getNum(j);
             let xPos = map(j, 0, data.getColumnCount(), 0, width);
-            let yPos = map(confirmed, today.min, today.max, height-20, 20);
+            let yPos = map(confirmed, today.min, today.max, height - 20, 20);
 
-            point(xPos, yPos);
+            // point(xPos, yPos);
             // let's draw a line instead
             //draw a line to connect the dots
             // on the last loop don't draw the line
-            // if (j > 3 && j < data.getColumnCount()) {
-            //     line(lastX, lastY, xPos, yPos);
-            // }
-            // lastX = xPos;
-            // lastY = yPos;
+            if (j > 3 && j < data.getColumnCount()) {
+                stroke(newHue, 80, 80, 50);
+                line(lastX, lastY, xPos, yPos);
+
+                // draw vertical ticks for days
+                stroke(100,0,100);
+                line(xPos, height-20, xPos, height-10);
+            }
+            lastX = xPos;
+            lastY = yPos;
+
+
         }
     }
 }
