@@ -36,12 +36,10 @@ function setup() {
     canvas = createCanvas(windowWidth, windowHeight);
 
     // how many rows?
-    console.log(data.getRowCount());
+    // console.log(data.getRowCount());
     // what are the columns?
-    console.log(data.columns);
-
+    // console.log(data.columns);
     background(0);
-    stroke(255);
 }
 
 function draw() {
@@ -74,8 +72,8 @@ function draw() {
                 line(lastX, lastY, xPos, yPos);
 
                 // draw vertical ticks for days
-                stroke(100,0,100);
-                line(xPos, height-20, xPos, height-10);
+                // stroke(100,0,100);
+                // line(xPos, height-20, xPos, height-10);
             }
             lastX = xPos;
             lastY = yPos;
